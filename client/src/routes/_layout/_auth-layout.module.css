@@ -1,0 +1,45 @@
+.wrap {
+  display: flex;
+  height: 100%;
+}
+
+.wrap .left,
+.wrap .right {
+  flex: 1 1 50%;
+}
+
+.wrap .left {
+  background-color: var(--grass-11);
+}
+
+.wrap .left.teacher {
+  background-color: var(--indigo-11);
+}
+
+.wrap .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--gap-3xl);
+}
+
+.tabs {
+  display: flex;
+  background-color: var(--slate-3);
+  padding: var(--gap-md);
+  border-radius: 0.375rem;
+}
+
+.tab-item {
+  display: flex;
+  flex: 1 1 50%;
+  justify-content: center;
+  align-items: center;
+  padding: var(--gap-md) var(--gap-lg);
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
+
+.tab-item[data-state="active"] {
+  background-color: #ffffff;
+}
