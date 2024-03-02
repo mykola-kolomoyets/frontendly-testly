@@ -9,11 +9,10 @@ import { z } from "zod";
 const authLayoutSearchParamsSchema = z.object({
   organization_id: z.coerce.string().default(""),
 });
-type AuthLayoutRouteSearchParams = z.infer<typeof authLayoutSearchParamsSchema>;
 
 export const Route = createFileRoute("/_layout/_auth-layout")({
   component: AuthLayout,
-  validateSearch(search: Record<string, string>): AuthLayoutRouteSearchParams {
+  validateSearch(search: Record<string, string>) {
     return authLayoutSearchParamsSchema.parse(search);
   },
   loaderDeps({ search }) {
