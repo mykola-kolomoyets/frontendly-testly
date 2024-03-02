@@ -4,21 +4,21 @@ import {
   ROUTE_LOADER_RESPONSE_CODE,
 } from "@/constants";
 import AuthLayout from "@/layouts/AuthLayout";
+import { z } from "zod";
 
-type AuthLayoutRouteSearchParams = {
-  organization_id: string;
-};
+const authLayoutSearchParamsSchema = z.object({
+  organization_id: z.coerce.string().default(""),
+});
+type AuthLayoutRouteSearchParams = z.infer<typeof authLayoutSearchParamsSchema>;
 
 export const Route = createFileRoute("/_layout/_auth-layout")({
   component: AuthLayout,
   validateSearch(search: Record<string, string>): AuthLayoutRouteSearchParams {
-    return {
-      organization_id: search?.organization_id ?? "",
-    };
+    return authLayoutSearchParamsSchema.parse(search);
   },
   loaderDeps({ search }) {
     return {
-      search: search as AuthLayoutRouteSearchParams,
+      search,
     };
   },
   loader({ deps: { search } }) {
