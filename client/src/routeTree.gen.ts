@@ -13,6 +13,7 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as LayoutTeacherLayoutImport } from './routes/_layout/_teacher-layout'
 import { Route as LayoutAuthLayoutImport } from './routes/_layout/_auth-layout'
 
 // Create Virtual Routes
@@ -43,6 +44,11 @@ const IndexLazyRoute = IndexLazyImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
+
+const LayoutTeacherLayoutRoute = LayoutTeacherLayoutImport.update({
+  id: '/_layout/_teacher-layout',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const LayoutAuthLayoutRoute = LayoutAuthLayoutImport.update({
   id: '/_layout/_auth-layout',
@@ -105,6 +111,10 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LayoutAuthLayoutImport
       parentRoute: typeof rootRoute
     }
+    '/_layout/_teacher-layout': {
+      preLoaderRoute: typeof LayoutTeacherLayoutImport
+      parentRoute: typeof rootRoute
+    }
     '/_layout/_auth-layout/auth/student/login': {
       preLoaderRoute: typeof LayoutAuthLayoutAuthStudentLoginLazyImport
       parentRoute: typeof LayoutAuthLayoutImport
@@ -135,6 +145,7 @@ export const routeTree = rootRoute.addChildren([
     LayoutAuthLayoutAuthTeacherLoginLazyRoute,
     LayoutAuthLayoutAuthTeacherRegisterLazyRoute,
   ]),
+  LayoutTeacherLayoutRoute,
 ])
 
 /* prettier-ignore-end */

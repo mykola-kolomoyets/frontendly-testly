@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { RouterProvider, createRouter } from "@tanstack/react-router";
 import "./styles/reset.css";
 import "./styles/variables.css";
+import "./styles/fonts.css";
 import "./styles/index.css";
 
 // Import the generated route tree

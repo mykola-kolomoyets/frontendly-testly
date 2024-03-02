@@ -1,0 +1,81 @@
+.wrap {
+  font-family: Inter, Verdana, Geneva, Tahoma, sans-serif;
+  color: var(--slate-12);
+}
+
+.heading-1 {
+  font-weight: 800;
+  font-size: 3rem;
+  line-height: 1;
+  letter-spacing: -0.012em;
+}
+
+.heading-2 {
+  font-weight: 600;
+  font-size: 1.875rem;
+  line-height: 1.2;
+  letter-spacing: -0.0075em;
+}
+
+.heading-3 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.33;
+  letter-spacing: -0.006em;
+}
+
+.heading-4 {
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+}
+
+.paragraph {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.table-header {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.table-cell {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.list-item {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.lead {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.large {
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.55;
+}
+
+.small {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.subtle {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.43;
+  color: var(--slate-10);
+}
